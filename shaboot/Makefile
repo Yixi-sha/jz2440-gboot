@@ -1,4 +1,4 @@
-OBJS := start.o main.o dev/dev.o lib/lib.o net/net.o
+OBJS := start.o main.o dev/dev.o lib/lib.o net/net.o  boot.o
 
 CFLAGS := -fno-builtin -I$(shell pwd)/include
 export CFLAGS
@@ -10,10 +10,10 @@ shaboot.elf : $(OBJS)
 	arm-linux-ld -Tshaboot.lds -o shaboot.elf $^
 	
 %.o : %.S
-	arm-linux-gcc -g -c $^
+	arm-linux-gcc tag.h -g -c $^
 	
 %.o : %.c
-	arm-linux-gcc $(CFLAGS) -c $^
+	arm-linux-gcc  $(CFLAGS) tag.h -c $^
 
 lib/lib.o : 
 	make -C lib all

@@ -142,7 +142,7 @@ void tftp_process(u8 *buf, u32 len, u16 port)
               for (i = 0;i<(tftp_len-4);i++)
               {
                   *(tftp_down_addr) = *(ptftp->data+i);
-//                  tftp_down_addr++;
+                  tftp_down_addr++;
               }	
          
               tftp_send_ack(HON(ptftp->blocknum));

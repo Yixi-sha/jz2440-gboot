@@ -21,7 +21,7 @@ u8 buffer[1500];
 u8 host_mac_addr[6] = {0xff,0xff,0xff,0xff,0xff,0xff};
 u8 mac_addr[6] = {9,8,7,6,5,4};
 u8 ip_addr[4] = {192,168,0,230};
-u8 host_ip_addr[4] = {192,168,0,101};
+u8 host_ip_addr[4] = {192,168,0,104};
 u16 packet_len;
 
 

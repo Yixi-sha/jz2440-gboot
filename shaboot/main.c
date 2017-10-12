@@ -74,16 +74,18 @@ int shaboot_main()
         {
             case 1:
             	//tftp_load();
-            	tftp_send_request("uImage");
+            	
+            	arp_request();
             	break;
             
             case 2:
             	//boot_linux_ram();
-            	arp_request();
+            	tftp_send_request("zImage");
             break;
             
             case 3:
             //boot_linux_nand();
+            boot_linux();
             break;
             
             default:
